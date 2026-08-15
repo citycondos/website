@@ -1,0 +1,3 @@
+baseURL = 'https://citycondos.org/'
+locale = 'en-au'
+title = 'City Condos'
