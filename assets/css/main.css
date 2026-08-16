@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@source "hugo_stats.json";
+@plugin "daisyui" {
+    themes: sunset --default;
+};
+@plugin "@iconify/tailwind4";
+html {
+    min-height: 100%;
+    background: linear-gradient(rgba(18, 28, 34, 0.6), rgba(18, 28, 34, 0.6)), url("/images/CityCondosFront.jpg") right / auto 100% no-repeat;
+    background-attachment: fixed;
+}
+.md-content h1 {
+    margin-bottom: 10pt;
+}
+.md-content p {
+    margin-bottom: 10pt;
+}
+.md-content li {
+    padding-left: 5px;
+    list-style: disc;
+}
+
+.md-content a {
+    text-decoration: underline;
+}
+
+@layer base {
+  h1 {
+    font-size: var(--text-3xl);
+  }
+  h2 {
+    font-size: var(--text-2xl);
+  }
+  h3 {
+    font-size: var(--text-xl);
+  }
+}

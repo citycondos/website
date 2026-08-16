@@ -1,3 +1,60 @@
 baseURL = 'https://citycondos.org/'
 locale = 'en-au'
 title = 'City Condos'
+
+[[params.smenus.main]]
+  name="Facilities"
+  [[params.smenus.main.children]]
+    name="Gym"
+    href="/gym"
+  [[params.smenus.main.children]]
+    name="Pool"
+    href="/pool"
+  [[params.smenus.main.children]]
+    name="BBQ area"
+    href="/bbq"
+  [[params.smenus.main.children]]
+    name="Tennis court"
+    href="/tennis-court"
+  [[params.smenus.main.children]]
+    name="Carpark"
+    href="/carpark"
+  [[params.smenus.main.children]]
+    name="Waste disposal"
+    href="/waste"
+[[params.smenus.main]]
+  name="Important Info"
+  [[params.smenus.main.children]]
+    name="OC Rules"
+    href="/rules"
+  [[params.smenus.main.children]]
+    name="Contacts"
+    href="/contact"
+[[params.smenus.main]]
+  name="Arrange"
+  [[params.smenus.main.children]]
+    name= 'Book move/in out'
+    href='/moveinform'
+  [[params.smenus.main.children]]
+    name= 'Register for notifications'
+    href='/register'
+
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+[module]
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
+[security.exec]
+  allow = ['^((dart-)?sass|go|npx|babel|node|git|postcss|tailwindcss)$']

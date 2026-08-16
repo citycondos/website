@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Locale }}" dir="{{ or site.Language.Direction `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  <div class="navbar bg-base-100 shadow-sm">
+    <div class="flex-none">
+      <a href="/"><img alt="" role="presentation" class="h-[32px] w-[32px] m-1" src="/favicon.ico"/></a>
+    </div>
+    <div class="flex-1">
+      <a class="text-xl ml-1" href="/">City Condos</a>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1 mr-[80pt]">
+        {{  range .Site.Params.smenus.main  }}
+          <li>
+            <details>
+              <summary>{{ .name }}</summary>
+              <ul class="bg-base-100 rounded-t-none p-2">
+                {{ range .children }}
+                <li><a href="{{.href}}">{{ .name }}</a></li>
+                {{ end }}
+              </ul>
+            </details>
+          </li>
+        {{ end }}
+      </ul>
+      <span class="mr-100px">&nbsp;</span>
+    </div>
+  </div>  
+  <div role="alert" class="alert alert-warning m-4">
+    <span class="icon-[mdi-light--alert] text-xl"></span>
+    <span>Warning: This site is still under development - information may be inaccurate and forms don't yet go anywhere.</span>
+  </div>
+  <main class="mx-auto w-full max-w-4xl px-4">
+    {{ block "main" . }}{{ end }}
+  </main>
+</body>
+</html>
