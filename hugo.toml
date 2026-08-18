@@ -1,6 +1,10 @@
 baseURL = 'https://citycondos.org/'
 locale = 'en-au'
 title = 'City Condos'
+defaultContentLanguage = 'en'
+defaultContentLanguageInSubdir = false
+disableDefaultLanguageRedirect = false
+disableLanguages = []
 
 [[params.smenus.main]]
   name="Facilities"
