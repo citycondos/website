@@ -58,3 +58,7 @@ title = 'City Condos'
     target = 'assets/notwatching/hugo_stats.json'
 [security.exec]
   allow = ['^((dart-)?sass|go|npx|babel|node|git|postcss|tailwindcss)$']
+
+
+[markup.goldmark.renderer]
+  unsafe = true
