@@ -4,29 +4,42 @@ Administer -> Theme Settings
 Clone (Copy and Edit) Minetta
 Enter this Advanced CSS for both Darkmode and Lightmode:
 ```
-.crm-container { background-color: rgba(0,0,0,0); }
+.crm-container { background-color: rgba(0,0,0,0); --crm-f-fieldset-bg-color: rgba(0,0,0,0); }
 .af-container { --crm-f-fieldset-bg-color: rgba(0,0,0,0); }
 ```
 
-# Activity notifications
+# Custom Event Type
 
-Create a Scheduled Reminder and set it to send to the Assignee when activities
-of the form type are created.
+Create new event type for Move.
 
-Don't try sending to a custom contact - for Activities that's hard-coded to
-filter to contacts on the activities (it does work for some other entity types).
+# Custom Field on Participant Type
+Make sure field is for Participant for Move Slot events.
 
-Add an Assignee field to the FormBuilder form that creates the activity, and mark it has
-hidden, required, and defaulting to the contacts that should receive the notification.
+Add field for Move Type (radio) + Move Notes.
 
-# Custom Field on Activity Type
-Move Type
-Move Event Booked (event type)
+# Profile
+
+Create a new one and add all the custom fields. Remember to set things as required.
+
+# Profile permissions
+Administer -> Users & Permissions -> User Permissions
+
+Everyone needs:
+access all custom data
+profile create
+register for events
+
+# Event Template
+
+Make sure it's open to the public.
+Add the notification to the Building Manager.
 
 # Event
 
-Create new event type for Move.
-Add Move Slot events - AM & PM need to be separate.
+Add Move Slot events - AM & PM need to be separate. Make sure you use the template and set recurrence.
+Need to skip public holidays.
+
+# Search for Events
 
 Create a Search -> SearchBuilder.
 Query Start Date, End Date ID
@@ -34,4 +47,5 @@ Filter Remaining Participants > 0, Enabled = Yes, Start Date >= After Now 23 Hou
 Event Type = Move Booking.
 
 Need to create a Table Display with Bypass permissions.
+Set links on Table display to hide controls + have link to public event URL (get from Event screen, but template the Event ID).
 Create afform linked to display (not search or bypass won't work).
