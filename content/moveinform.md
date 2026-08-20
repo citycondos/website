@@ -13,9 +13,8 @@ To allow time for lift protection to be installed and removed, you move must sta
 and be completed by 3:30 PM. Unfortunately, moving large items is not permitted outside this
 time.
 
-To organise a move, please complete the below form. It is also an opportunity to subscribe to or
-unsubscribe from our residents email / urgent SMS list, used to provide important information to
+To organise a move, please complete the form linked below. It is also an opportunity to subscribe to
+our residents email / urgent SMS list, used to provide important information to
 residents about what's happening in the building.
 
-<iframe src="https://citycondos.civicrm.org/civicrm/movesearch" style="width: 100%; height: 100vh; frame-sizing: content-height;" allowtransparency="true">
-</iframe>
+[Go to the form](https://citycondos.civicrm.org/civicrm/movesearch)
