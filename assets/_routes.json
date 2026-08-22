@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "include": ["/webhook/{{ site.Params.secret.webhook.url.path }}/*"],
+  "exclude": []
+}

@@ -1,3 +1,5 @@
+{{ $routes := resources.Get "_routes.json" | resources.ExecuteAsTemplate "_routes.json" $ }}
+{{ $routes.Publish }}
 {{ define "main" }}
 <div class="flex min-h-[80vh] items-center md-content"><div>
 <h1 class="text-5xl">{{ .Title }}</h1>
