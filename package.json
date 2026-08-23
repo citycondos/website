@@ -5,6 +5,13 @@
     "@tailwindcss/cli": "^4.3.3",
     "@tailwindcss/typography": "^0.5.20",
     "daisyui": "^5.7.17",
-    "tailwindcss": "^4.3.3"
+    "tailwindcss": "^4.3.3",
+    "wrangler": "^4.125.0"
+  },
+  "scripts": {
+    "preview": "hugo && wrangler pages dev --binding MM_WEBHOOK_SECRET=devfakesecret"
+  },
+  "dependencies": {
+    "typescript": "^7.0.2"
   }
 }

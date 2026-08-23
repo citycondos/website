@@ -9,6 +9,7 @@ html {
     min-height: 100%;
     background: linear-gradient(rgba(18, 28, 34, 0.6), rgba(18, 28, 34, 0.6)), url("/images/CityCondosFront.jpg") right / auto 100% no-repeat;
     background-attachment: fixed;
+    font-size: 14pt;
 }
 .md-content h1 {
     margin-bottom: 10pt;
