@@ -27,7 +27,7 @@ disableLanguages = []
     name="Waste disposal"
     href="/waste"
 [[params.smenus.main]]
-  name="Important Info"
+  name="Info"
   [[params.smenus.main.children]]
     name="OC Rules"
     href="/rules"

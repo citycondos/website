@@ -9,11 +9,5 @@
   "vars": {
     "HUGO_VERSION": "0.165.0",
     "CIVICRM_BASE": "https://citycondos.civicrm.org/civicrm"
-  },
-  "secrets": {
-    "required": [
-      "CIVICRM_API_KEY",
-      "CIVICRM_SITE_KEY"
-    ]
   }
 }
