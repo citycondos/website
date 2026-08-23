@@ -2,7 +2,7 @@
 Title: City Condos
 ---
 City Condos is a 23 storey residential apartment building located at 416 St Kilda Road, Melbourne, VIC 3004.
-It has 159 apartments (each with undercover parking) and features facilities including a gym, pool, BBQ area,
+It has 159 apartments (most with undercover parking) and features facilities including a gym, pool, BBQ area,
 tennis court, front garden, guest lobby and two recently modernised lifts.
 
 
