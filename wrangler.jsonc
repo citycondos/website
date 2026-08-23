@@ -9,6 +9,6 @@
   "vars": {
     "HUGO_VERSION": "0.165.0",
     "CIVICRM_BASE": "https://citycondos.civicrm.org/civicrm",
-    "MM_MESSAGE_API": "https://api.mobilemessage.com.au"
+    "MM_MESSAGE_API": "https://api.mobilemessage.com.au/v1/messages"
   }
 }

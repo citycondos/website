@@ -12,8 +12,8 @@ export function transformNumber(input: string): string | undefined {
 }
 
 export async function smsOutbound(env: Env, form: FormData, auth: string | null): Promise<Response> {
-  if (auth === null || auth.toLowerCase() !== env.EXPECTED_TWILIOCOMPAT_AUTHENTICATION.toLowerCase()) {
-    console.log("Got unauthenticated SMS outbound request");
+  if (auth === null || auth !== env.EXPECTED_TWILIOCOMPAT_AUTHENTICATION) {
+    console.log("Got unauthenticated SMS outbound request", auth, env.EXPECTED_TWILIOCOMPAT_AUTHENTICATION);
     return new Response("Authentication required", { status: 401 });
   }
 
@@ -42,13 +42,15 @@ export async function smsOutbound(env: Env, form: FormData, auth: string | null)
     },
     body: JSON.stringify(
       {
-        to: recipient,
-        message: body + "{optout}",
-        sender: env.MM_SENDER
+        messages: [{
+          to: recipient,
+          message: body + "{optout}",
+          sender: env.MM_SENDER
+        }]
       }
     )
   });
-  console.log(`Send to ${recipient} got response ${res.status} from MobileMessage API`);
+  console.log(`Send to ${recipient} got response ${res.status} from MobileMessage API, body: ${await res.text()}`);
 
   if (res.status == 200)
     return Response.json(
