@@ -4,14 +4,15 @@
     "@iconify/tailwind4": "^1.2.3",
     "@tailwindcss/cli": "^4.3.3",
     "@tailwindcss/typography": "^0.5.20",
+    "@types/node": "^26.2.0",
     "daisyui": "^5.7.17",
     "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11",
     "wrangler": "^4.125.0"
   },
   "scripts": {
-    "preview": "hugo && wrangler pages dev --binding MM_WEBHOOK_SECRET=devfakesecret"
-  },
-  "dependencies": {
-    "typescript": "^7.0.2"
+    "preview": "hugo && wrangler pages dev --binding MM_WEBHOOK_SECRET=devfakesecret",
+    "test": "vitest"
   }
 }
