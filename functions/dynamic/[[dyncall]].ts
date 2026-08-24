@@ -1,7 +1,7 @@
 import { Env } from './env';
 import { verifyMmSignature } from './mobilemsgsign';
 import { smsInbound } from './smsinbound';
-import { smsOutbound } from './smsoutbound';
+import { smsOutbound, attemptSms } from './smsoutbound';
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   const [_secret, dyncallType, ...others] = context.params.dyncall;
@@ -21,3 +21,13 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
       return Response.json({err: "Unknown webhook", input: dyncallType}, { status: 404 });
   }
 };
+
+export const onRequestGet: PagesFunction<Env> = async (context) => {
+  const [_secret, dyncallType, ...others] = context.params.dyncall;
+  switch (dyncallType) {
+    case "attemptsms":
+      return attemptSms(context.env);
+    default:
+      return Response.json({err: "Unknown GET endpoint", input: dyncallType}, { status: 404 });
+  }
+}
