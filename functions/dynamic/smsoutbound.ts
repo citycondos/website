@@ -137,26 +137,26 @@ export async function attemptSms(env: Env): Promise<Response> {
           sender: env.MM_SENDER
         });
       }
-      if (send_recs.length == 0) {
-        log += `Skipped sending for activity ${id} because no contacts matched. `;
+    }
+    if (send_recs.length == 0) {
+      log += `Skipped sending for activity ${id} because no contacts matched. `;
+    } else {
+      const send_res = await fetch(env.MM_MESSAGE_API, {
+        method: "POST",
+        headers: {
+          'Authorization': env.MM_OUTBOUND_AUTH,
+          'Content-Type': 'application/json',
+          'Idempotency-Key': `${id}`
+        },
+        body: JSON.stringify({ messages: send_recs })
+      });
+      if (send_res.status === 422) {
+        log += `MobileMessage has already processed activity ${id}. `;
+      } else if (send_res.status === 200) {
+        log += `Queued ${send_recs.length} messages for activity ${id}. `;
       } else {
-        const send_res = await fetch(env.MM_MESSAGE_API, {
-          method: "POST",
-          headers: {
-            'Authorization': env.MM_OUTBOUND_AUTH,
-            'Content-Type': 'application/json',
-            'Idempotency-Key': `${id}`
-          },
-          body: JSON.stringify({ messages: send_recs })
-        });
-        if (send_res.status === 422) {
-          log += `MobileMessage has already processed activity ${id}. `;
-        } else if (send_res.status === 200) {
-          log += `Queued ${send_recs.length} messages for activity ${id}. `;
-        } else {
-          log += `Got unexpected status ${send_res.status} from MobileMessage for activity ${id}. `;
-          console.log("MM response body", await send_res.text());
-        }
+        log += `Got unexpected status ${send_res.status} from MobileMessage for activity ${id}. `;
+        console.log("MM response body", await send_res.text());
       }
 
       // Now we mark the activity as done...
