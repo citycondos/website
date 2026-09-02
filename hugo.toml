@@ -34,6 +34,9 @@ disableLanguages = []
   [[params.smenus.main.children]]
     name="Contacts"
     href="/contact"
+  [[params.smenus.main.children]]
+    name="Fire Safety"
+    href="/firesafety"
 [[params.smenus.main]]
   name="Arrange"
   [[params.smenus.main.children]]
