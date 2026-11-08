@@ -3,6 +3,7 @@ Title: Tennis court
 ---
 
 {{< podiumnotices >}}
+{{< bbqtennisnotices >}}
 
 The tennis court is part of the outdoor podium area on level 3. It needs to be booked by recording your name and lot number
 against the hour block on the booking sheet on the corkboard in the gym. To ensure everyone gets a chance to use the court, it can only be booked for an hour at a time (i.e. booking two consecutive hour blocks is prohibited).

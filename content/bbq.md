@@ -3,6 +3,7 @@ Title: BBQ area
 ---
 
 {{< podiumnotices >}}
+{{< bbqtennisnotices >}}
 
 The BBQ area is part of the outdoor podium area on level 3. The BBQ area includes an electric barbeque and a seating area.
 It is available on a first-come, first-serve basis.
